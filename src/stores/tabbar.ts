@@ -19,6 +19,22 @@ export const useTabbarStore = defineStore('tabbar', () => {
       pagePath: '/pages/about/about',
       count: 3,
     },
+    {
+      text: '聊天',
+      iconPath: 'chat',
+      selectedIconPath: 'chat-fill',
+      pagePath: '/pages/chat/chat',
+      isDot: false,
+      count: 0,
+    },
+    {
+      text: '测试',
+      iconPath: 'question-circle',
+      selectedIconPath: 'question-circle-fill',
+      pagePath: '/pages/test/test',
+      isDot: false,
+      count: 0,
+    },
   ])
 
   const setActiveIndex = (index: number) => {
