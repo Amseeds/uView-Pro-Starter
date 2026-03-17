@@ -23,7 +23,7 @@ export const useTabbarStore = defineStore('tabbar', () => {
       text: '聊天',
       iconPath: 'chat',
       selectedIconPath: 'chat-fill',
-      pagePath: '/pages/chat/chat',
+      pagePath: '/pages/chat-list/chat-list',
       isDot: false,
       count: 0,
     },

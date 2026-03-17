@@ -40,10 +40,16 @@
       "path": "pages/about/settings"
     },
     {
+      "path": "pages/chat-list/chat-list"
+    },
+    {
       "path": "pages/chat/chat"
     },
     {
       "path": "pages/test/test"
+    },
+    {
+      "path": "pages/test-page/test-page"
     }
   ],
   "globalStyle": {
@@ -69,7 +75,7 @@
         "pagePath": "pages/about/about"
       },
       {
-        "pagePath": "pages/chat/chat"
+        "pagePath": "pages/chat-list/chat-list"
       },
       {
         "pagePath": "pages/test/test"
