@@ -532,10 +532,13 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .app-container {
   background: linear-gradient(180deg, rgba(41, 121, 255, 0.03) 0%, transparent 100%);
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
   gap: 24rpx;
+  .content-scroll {
+    flex: 1;
+  }
 }
 .header {
   display: flex;

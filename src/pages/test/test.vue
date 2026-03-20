@@ -2,6 +2,7 @@
 import type { ColorType } from 'uview-pro/types/global'
 import { $u } from 'uview-pro'
 import { useI18n } from 'vue-i18n'
+import chart from './components/chart.vue'
 
 const { t } = useI18n()
 </script>
@@ -10,6 +11,7 @@ const { t } = useI18n()
   <app-page :nav-title="$t('common.testPage')" show-tabbar>
     <view class="app-container">
       测试页面内容
+      <chart />
     </view>
   </app-page>
 </template>
