@@ -8,6 +8,7 @@ export default {
         color: ['#1890FF', '#91CB74', '#FAC858', '#EE6666', '#73C0DE', '#3CA272', '#FC8452', '#9A60B4', '#ea7ccc'],
         padding: [15, 15, 0, 5],
         enableScroll: false,
+        enableMarkLine: true,
         legend: {},
         xAxis: {
           disableGrid: true,
@@ -21,18 +22,31 @@ export default {
         },
         extra: {
           column: {
-            type: 'stack',
+            type: 'group',
             width: 30,
             activeBgColor: '#000000',
             activeBgOpacity: 0.08,
-            labelPosition: 'center',
+            seriesGap: 5,
+            barBorderRadius: [
+              6,
+              6,
+              6,
+              6,
+            ],
+          },
+          markLine: {
+            data: [
+              {
+                value: 21,
+                showLabel: true,
+              },
+            ],
           },
         },
       },
     }
   },
   mounted() {
-    console.log('获取数据')
     this.getServerData()
   },
   methods: {
@@ -45,18 +59,15 @@ export default {
           series: [
             {
               name: '目标值',
-              textColor: '#FFFFFF',
               data: [35, 36, 31, 33, 13, 34],
             },
             {
               name: '完成量',
-              textColor: '#FFFFFF',
-              data: [18, 27, 21, 24, 6, 28],
+              data: [18, 27, { value: 21, color: '#EE6666' }, 24, 6, 28],
             },
           ],
         }
         this.chartData = JSON.parse(JSON.stringify(res))
-        console.log('赋值完成')
       }, 500)
     },
   },
