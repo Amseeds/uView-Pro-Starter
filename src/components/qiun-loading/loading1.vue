@@ -1,22 +1,22 @@
-<template>
-	 <view class="container loading1">
-		<view class="shape shape1"></view>
-		<view class="shape shape2"></view>
-		<view class="shape shape3"></view>
-		<view class="shape shape4"></view>
-	</view>
-</template>
-
 <script>
-	export default {
-		name: 'loading1',
-		data() {
-			return {
-				
-			};
-		}
-	}
+export default {
+  name: 'Loading1',
+  data() {
+    return {
+
+    }
+  },
+}
 </script>
+
+<template>
+  <view class="container loading1">
+    <view class="shape shape1" />
+    <view class="shape shape2" />
+    <view class="shape shape3" />
+    <view class="shape shape4" />
+  </view>
+</template>
 
 <style scoped="true">
 .container {
@@ -157,6 +157,4 @@
             transform: translate(-16px, -16px);
   }
 }
-
-
 </style>
