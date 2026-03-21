@@ -10,6 +10,7 @@ import chart5 from './components/chart5.vue'
 import chart6 from './components/chart6.vue'
 import chart7 from './components/chart7.vue'
 import chart8 from './components/chart8.vue'
+import chart9 from './components/chart9.vue'
 
 const { t } = useI18n()
 </script>
@@ -25,6 +26,7 @@ const { t } = useI18n()
       <chart6 />
       <chart7 />
       <chart8 />
+      <chart9 />
     </view>
   </app-page>
 </template>

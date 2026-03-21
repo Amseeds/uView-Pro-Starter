@@ -83,7 +83,10 @@
     ]
   },
   "easycom": {
-    "autoscan": true
+    "autoscan": true,
+    "custom": {
+      "^ly-(.*)": "@/uni_modules/ly-charts/components/ly-$1/ly-$1.vue"
+    }
   },
   "subPackages": []
 }

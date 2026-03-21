@@ -20,3 +20,14 @@ docs
 *.njsproj
 *.sln
 *.sw?
+
+# 正确写法：仅忽略uni_modules内的临时/依赖文件
+uni_modules/**/node_modules/
+uni_modules/**/dist/
+uni_modules/**/build/
+uni_modules/**/.DS_Store
+uni_modules/**/npm-debug.log
+uni_modules/**/yarn.lock
+uni_modules/**/package-lock.json
+# 若有小程序编译产物，也可忽略
+uni_modules/**/miniprogram_dist/
