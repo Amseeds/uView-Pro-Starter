@@ -19,7 +19,8 @@
       "miniprogram-api-typings",
       "z-paging/types",
       "uview-pro/types",
-      "@uni-helper/uni-types"
+      "@uni-helper/uni-types",
+      "uni-echarts/global"
     ],
     "strict": true,
     "noImplicitThis": true,

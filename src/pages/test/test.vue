@@ -12,6 +12,7 @@ import chart7 from './components/chart7.vue'
 import chart8 from './components/chart8.vue'
 import chart9 from './components/chart9.vue'
 import chart10 from './components/chart10.vue'
+import chart11 from './components/chart11.vue'
 
 const { t } = useI18n()
 </script>
@@ -19,6 +20,7 @@ const { t } = useI18n()
 <template>
   <app-page :nav-title="$t('common.testPage')" show-tabbar>
     <view class="app-container">
+      <chart11 />
       <chart1 />
       <chart2 />
       <chart3 />
