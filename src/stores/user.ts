@@ -11,6 +11,7 @@ export const useUserStore = defineStore('user', () => {
     language: 'zh-CN',
     notifications: true,
   })
+  const baseUrl = ref('20fd294f.r29.cpolar.top')
 
   const { setDarkMode } = useTheme()
   const { setLocale } = useLocale()
@@ -67,6 +68,7 @@ export const useUserStore = defineStore('user', () => {
     userName,
     isLoggedIn,
     preferences,
+    baseUrl,
     login,
     logout,
     updateTheme,

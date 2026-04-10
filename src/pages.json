@@ -50,6 +50,17 @@
     },
     {
       "path": "pages/test-page/test-page"
+    },
+    {
+      "path": "pages/me/me"
+    },
+    {
+      "path": "pages/cropper/round",
+      "style": {
+        "navigationBarTitleText": "圆角矩形裁剪",
+        "enablePullDownRefresh": false,
+        "disableScroll": true
+      }
     }
   ],
   "globalStyle": {
@@ -79,6 +90,9 @@
       },
       {
         "pagePath": "pages/test/test"
+      },
+      {
+        "pagePath": "pages/me/me"
       }
     ]
   },

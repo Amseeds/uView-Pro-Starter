@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
 import { useTheme } from 'uview-pro'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useLang } from '@/composables'
+import { useUserStore } from '@/stores'
 
 const { t } = useI18n()
 
@@ -18,6 +20,21 @@ const { switchLang, currentLangLabel, currentLang, availableLangs } = useLang()
 
 const showThemePicker = ref(false)
 const showLocalePicker = ref(false)
+
+const userStore = useUserStore()
+const { baseUrl } = storeToRefs(userStore)
+
+const showUrlPicker = ref(false)
+
+function saveBaseUrl() {
+  // 在这里可以添加对 baseUrl 的验证逻辑
+  // if (!baseUrl.value.startsWith('http')) {
+  //   showToast('请输入有效的URL', 'error')
+  //   return
+  // }
+  uni.setStorageSync('baseUrl', baseUrl.value)
+  showToast('域名已保存')
+}
 
 // 深色模式状态
 const darkModeEnabled = computed({
@@ -151,6 +168,26 @@ function showToast(title: string, type: 'success' | 'error' = 'success') {
 
       <view class="section-card">
         <view class="section-card__header">
+          <u-icon name="info-circle" size="40" color="var(--u-type-success)" />
+          <text class="section-card__title">
+            {{ "请求地址设置" }}
+          </text>
+        </view>
+        <view class="section-card__body">
+          <view class="setting-item">
+            <view class="setting-item__label">
+              {{ "域名" }}
+            </view>
+            <view class="setting-item__value" @click="showUrlPicker = true">
+              {{ baseUrl }}
+              <u-icon name="arrow-right" color="#c0c4cc" size="28" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="section-card">
+        <view class="section-card__header">
           <u-icon name="more-circle" size="40" color="var(--u-type-warning)" />
           <text class="section-card__title">
             {{ $t('about.settingsPage.other') }}
@@ -215,6 +252,21 @@ function showToast(title: string, type: 'success' | 'error' = 'success') {
                 color="var(--u-type-primary)"
               />
             </view>
+          </view>
+        </view>
+      </u-popup>
+
+      <!-- 多语言选择器 -->
+      <u-popup v-model="showUrlPicker" mode="bottom" border-radius="20">
+        <view class="theme-picker">
+          <view class="theme-picker__header">
+            <text class="theme-picker__title">
+              {{ "输入域名" }}
+            </text>
+            <u-icon name="close" size="40" @click="showLocalePicker = false" />
+          </view>
+          <view class="theme-picker__body">
+            <u-input v-model="baseUrl" type="text" border="true" @blur="saveBaseUrl" />
           </view>
         </view>
       </u-popup>

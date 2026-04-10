@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import type { ColorType } from 'uview-pro/types/global'
+import { storeToRefs } from 'pinia'
 import { $u } from 'uview-pro'
 import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useUserStore } from '@/stores'
 
 const { t } = useI18n()
 
@@ -15,7 +17,12 @@ const onlineCount = ref(0)
 const messages = ref([])
 const inputMessage = ref('')
 const scrollTop = ref(0)
-let wsUrl = 'ws://127.0.0.1:8000/api/chat/ws' // 基础地址，APP端会条件编译覆盖
+
+const userStore = useUserStore()
+const { baseUrl } = storeToRefs(userStore)
+
+let wsUrl = `ws://${baseUrl.value}/api/chat/ws` // 基础地址，APP端会条件编译覆盖
+// let wsUrl = `ws://20fd294f.r29.cpolar.top/api/chat/ws` // 基础地址，APP端会条件编译覆盖
 
 // 语音相关
 const isVoiceMode = ref(false)

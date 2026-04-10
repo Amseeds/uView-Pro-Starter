@@ -35,6 +35,14 @@ export const useTabbarStore = defineStore('tabbar', () => {
       isDot: false,
       count: 0,
     },
+    {
+      text: '我的',
+      iconPath: 'question-circle',
+      selectedIconPath: 'question-circle-fill',
+      pagePath: '/pages/me/me',
+      isDot: false,
+      count: 0,
+    },
   ])
 
   const setActiveIndex = (index: number) => {
